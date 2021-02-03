@@ -1,6 +1,7 @@
 const express = require('express');
 const Podlet = require('@podium/podlet');
 const cors = require('cors');
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -35,5 +36,5 @@ app.get(podlet.manifest(), (req, res) => {
 app.use(express.static(__dirname + '/assets'));
 podlet.css({ value: '/styles.css' });
 
-app.listen(3001);
+app.listen(PORT);
 console.log('Navbar pod listening at port: 3001');
